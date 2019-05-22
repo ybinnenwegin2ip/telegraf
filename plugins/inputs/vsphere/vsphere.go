@@ -200,12 +200,19 @@ var sampleConfig = `
   ## timeout applies to any of the api request made to vcenter
   # timeout = "60s"
 
+<<<<<<< HEAD
   ## When set to true, all samples are sent as integers. This makes the output
   ## data types backwards compatible with Telegraf 1.9 or lower. Normally all
   ## samples from vCenter, with the exception of percentages, are integer
   ## values, but under some conditions, some averaging takes place internally in
   ## the plugin. Setting this flag to "false" will send values as floats to
   ## preserve the full precision when averaging takes place.
+=======
+  ## When set to true, all samples are sent as integers. This makes the output data types backwards compatible
+  ## with Telegraf 1.9 or lower. Normally all samples from vCenter, with the exception of percentages, are 
+  ## integer values, but under some conditions, some averaging takes place internally in the plugin. Setting this
+  ## flag to "false" will send values as floats to preserve the full precision when averaging takes place.
+>>>>>>> 3548ce47caee4a689fb993f8b7bd2f797e0ab563
   # use_int_samples = true
 
   ## Optional SSL Config
