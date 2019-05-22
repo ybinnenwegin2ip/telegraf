@@ -90,13 +90,15 @@ targets = {
 supported_builds = {
     "windows": [ "amd64", "i386" ],
     "linux": [ "amd64", "i386", "armhf", "armel", "arm64", "static_amd64", "s390x", "mipsel"],
-    "freebsd": [ "amd64", "i386" ]
+    "freebsd": [ "amd64", "i386" ],
+    "omnios": [ "amd64" ]
 }
 
 supported_packages = {
     "linux": [ "deb", "rpm", "tar" ],
     "windows": [ "zip" ],
-    "freebsd": [ "tar" ]
+    "freebsd": [ "tar" ],
+    "omnios": [ "tar" ]
 }
 
 next_version = '1.11.0'
