@@ -30,9 +30,9 @@
   name = "github.com/dgrijalva/jwt-go"
   version = "3.2.0"
 
-[[constraint]]
-  name = "github.com/docker/docker"
-  revision = "ed7b6428c133e7c59404251a09b7d6b02fa83cc2" # v18.05.0-ce
+# [[constraint]]
+#   name = "github.com/docker/docker"
+#   revision = "ed7b6428c133e7c59404251a09b7d6b02fa83cc2" # v18.05.0-ce
 
 [[override]]
   name = "github.com/docker/distribution"
