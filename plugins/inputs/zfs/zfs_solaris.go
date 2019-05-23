@@ -78,6 +78,18 @@ func (z *Zfs) gatherPoolStats(acc telegraf.Accumulator) (string, error) {
 					return "", fmt.Errorf("Error parsing dedupratio: %s", err)
 				}
 				fields["dedupratio"] = dedup
+
+                                // More zpool-specific metrics
+                                stdout, err := z.kstat(col[0])
+                                if err == nil {
+                                        for _, line := range stdout {
+                                                rawData := strings.Split(line, ":")
+                                                keyValue := strings.Split(rawData[3], "\t")
+                                                key := keyValue[0]
+                                                value, _ := strconv.ParseInt(keyValue[1], 10, 64)
+                                                fields[key] = value
+                                        }
+                                }
 			}
 
 			acc.AddFields("zfs_pool", fields, tags)
