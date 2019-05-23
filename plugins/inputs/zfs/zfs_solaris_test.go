@@ -1,4 +1,4 @@
-// +build omnios
+// +build solaris
 
 package zfs
 
