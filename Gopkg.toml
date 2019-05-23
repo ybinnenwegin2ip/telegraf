@@ -269,13 +269,10 @@
   name = "github.com/go-logfmt/logfmt"
   version = "0.4.0"
 
-<<<<<<< HEAD
 [[constraint]]
   branch = "master"
   name = "github.com/ghodss/yaml"
 
-=======
->>>>>>> 3548ce47caee4a689fb993f8b7bd2f797e0ab563
 [[override]]
   name = "golang.org/x/crypto"
   source = "https://github.com/golang/crypto.git"
@@ -289,10 +286,5 @@
   source = "https://github.com/golang/text.git"
 
 [[constraint]]
-<<<<<<< HEAD
   name = "github.com/google/go-github"
   version = "24.0.1"
-=======
-  branch = "master"
-  name = "github.com/ghodss/yaml"
->>>>>>> 3548ce47caee4a689fb993f8b7bd2f797e0ab563

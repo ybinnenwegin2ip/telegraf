@@ -367,11 +367,7 @@ func (s *Statsd) Start(_ telegraf.Accumulator) error {
 			return err
 		}
 
-<<<<<<< HEAD
 		log.Println("I! [inputs.statsd] Statsd UDP listener listening on: ", conn.LocalAddr().String())
-=======
-		log.Println("I! Statsd UDP listener listening on: ", conn.LocalAddr().String())
->>>>>>> 3548ce47caee4a689fb993f8b7bd2f797e0ab563
 		s.UDPlistener = conn
 
 		s.wg.Add(1)
@@ -389,11 +385,7 @@ func (s *Statsd) Start(_ telegraf.Accumulator) error {
 			return err
 		}
 
-<<<<<<< HEAD
 		log.Println("I! [inputs.statsd] TCP Statsd listening on: ", listener.Addr().String())
-=======
-		log.Println("I! TCP Statsd listening on: ", listener.Addr().String())
->>>>>>> 3548ce47caee4a689fb993f8b7bd2f797e0ab563
 		s.TCPlistener = listener
 
 		s.wg.Add(1)
@@ -409,11 +401,7 @@ func (s *Statsd) Start(_ telegraf.Accumulator) error {
 		defer s.wg.Done()
 		s.parser()
 	}()
-<<<<<<< HEAD
 	log.Printf("I! [inputs.statsd] Started the statsd service on %s\n", s.ServiceAddress)
-=======
-	log.Printf("I! Started the statsd service on %s\n", s.ServiceAddress)
->>>>>>> 3548ce47caee4a689fb993f8b7bd2f797e0ab563
 	return nil
 }
 
@@ -470,7 +458,6 @@ func (s *Statsd) udpListen(conn *net.UDPConn) error {
 		case <-s.done:
 			return nil
 		default:
-<<<<<<< HEAD
 			n, addr, err := conn.ReadFromUDP(buf)
 			if err != nil {
 				if !strings.Contains(err.Error(), "closed network") {
@@ -478,12 +465,6 @@ func (s *Statsd) udpListen(conn *net.UDPConn) error {
 					continue
 				}
 				return err
-=======
-			n, _, err := conn.ReadFromUDP(buf)
-			if err != nil && !strings.Contains(err.Error(), "closed network") {
-				log.Printf("E! Error READ: %s\n", err.Error())
-				continue
->>>>>>> 3548ce47caee4a689fb993f8b7bd2f797e0ab563
 			}
 			b := s.bufPool.Get().(*bytes.Buffer)
 			b.Reset()

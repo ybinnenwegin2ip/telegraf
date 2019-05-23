@@ -78,21 +78,12 @@ func newLogWriter(config LogConfig) io.Writer {
 		wlog.SetLevel(wlog.ERROR)
 	}
 
-<<<<<<< HEAD
 	var writer io.Writer
 	if config.Logfile != "" {
 		var err error
 		if writer, err = rotate.NewFileWriter(config.Logfile, config.RotationInterval.Duration, config.RotationMaxSize.Size, config.RotationMaxArchives); err != nil {
 			log.Printf("E! Unable to open %s (%s), using stderr", config.Logfile, err)
 			writer = os.Stderr
-=======
-	var oFile *os.File
-	if logfile != "" {
-		var err error
-		if oFile, err = os.OpenFile(logfile, os.O_CREATE|os.O_APPEND|os.O_WRONLY, os.ModeAppend|0644); err != nil {
-			log.Printf("E! Unable to open %s (%s), using stderr", logfile, err)
-			oFile = os.Stderr
->>>>>>> 3548ce47caee4a689fb993f8b7bd2f797e0ab563
 		}
 	} else {
 		writer = os.Stderr

@@ -129,13 +129,8 @@ func TestConverter(t *testing.T) {
 			converter: &Converter{
 				Fields: &Conversion{
 					String:   []string{"a"},
-<<<<<<< HEAD
 					Integer:  []string{"b", "b1", "b2", "b3"},
 					Unsigned: []string{"c", "c1", "c2", "c3"},
-=======
-					Integer:  []string{"b", "b1", "b2"},
-					Unsigned: []string{"c", "c1", "c2"},
->>>>>>> 3548ce47caee4a689fb993f8b7bd2f797e0ab563
 					Boolean:  []string{"d"},
 					Float:    []string{"e"},
 					Tag:      []string{"f"},
@@ -150,17 +145,11 @@ func TestConverter(t *testing.T) {
 						"b":  "42",
 						"b1": "42.2",
 						"b2": "42.5",
-<<<<<<< HEAD
 						"b3": "0x2A",
 						"c":  "42",
 						"c1": "42.2",
 						"c2": "42.5",
 						"c3": "0x2A",
-=======
-						"c":  "42",
-						"c1": "42.2",
-						"c2": "42.5",
->>>>>>> 3548ce47caee4a689fb993f8b7bd2f797e0ab563
 						"d":  "true",
 						"e":  "42.0",
 						"f":  "foo",
@@ -179,17 +168,11 @@ func TestConverter(t *testing.T) {
 						"b":  int64(42),
 						"b1": int64(42),
 						"b2": int64(43),
-<<<<<<< HEAD
 						"b3": int64(42),
 						"c":  uint64(42),
 						"c1": uint64(42),
 						"c2": uint64(43),
 						"c3": uint64(42),
-=======
-						"c":  uint64(42),
-						"c1": uint64(42),
-						"c2": uint64(43),
->>>>>>> 3548ce47caee4a689fb993f8b7bd2f797e0ab563
 						"d":  true,
 						"e":  42.0,
 					},

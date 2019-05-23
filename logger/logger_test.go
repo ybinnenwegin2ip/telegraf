@@ -113,29 +113,6 @@ func TestWriteToFileInRotation(t *testing.T) {
 	assert.Equal(t, 2, len(files))
 }
 
-func TestWriteToTruncatedFile(t *testing.T) {
-	tmpfile, err := ioutil.TempFile("", "")
-	assert.NoError(t, err)
-	defer func() { os.Remove(tmpfile.Name()) }()
-
-	SetupLogging(true, false, tmpfile.Name())
-	log.Printf("TEST")
-
-	f, err := ioutil.ReadFile(tmpfile.Name())
-	assert.NoError(t, err)
-	assert.Equal(t, f[19:], []byte("Z I! TEST\n"))
-
-	tmpf, err := os.OpenFile(tmpfile.Name(), os.O_TRUNC, 0644)
-	assert.NoError(t, err)
-	assert.NoError(t, tmpf.Close())
-
-	log.Printf("SHOULD BE FIRST")
-
-	f, err = ioutil.ReadFile(tmpfile.Name())
-	assert.NoError(t, err)
-	assert.Equal(t, f[19:], []byte("Z I! SHOULD BE FIRST\n"))
-}
-
 func BenchmarkTelegrafLogWrite(b *testing.B) {
 	var msg = []byte("test")
 	var buf bytes.Buffer
