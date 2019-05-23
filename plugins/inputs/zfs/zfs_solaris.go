@@ -108,7 +108,7 @@ func (z *Zfs) Gather(acc telegraf.Accumulator) error {
 		}
 		for _, line := range stdout {
 			rawData := strings.Split(line, ":")
-			keyValue := strings.Split(rawData[3], " ")
+			keyValue := strings.Split(rawData[3], "\t")
 			key := metric + "_" + keyValue[0]
 			value, _ := strconv.ParseInt(keyValue[1], 10, 64)
 			fields[key] = value
