@@ -255,7 +255,7 @@
 
 [[constraint]]
   name = "github.com/karrick/godirwalk"
-  version = "1.10.3"
+  version = "=1.10.3"
 
 [[override]]
   name = "github.com/harlow/kinesis-consumer"
